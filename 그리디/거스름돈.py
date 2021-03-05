@@ -19,7 +19,7 @@ while n > 0:
         n -= 10
 
 print(count)
-
+# O(n)
 #######################################################################
 
 n = 1260
@@ -32,3 +32,5 @@ for coin in coin_types:
     n %= coin
 
 print(count)
+
+# O(coin_types)

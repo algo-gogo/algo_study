@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72eb5ec0-1a86-4457-bc1d-ea2652db6230" name="Default Changelist" comment="그리디 알고리즘">
-      <change afterPath="$PROJECT_DIR$/그리디/숫자카드게임.py" afterDir="false" />
+    <list default="true" id="72eb5ec0-1a86-4457-bc1d-ea2652db6230" name="Default Changelist" comment="그리디 알고리즘 - 숫자카드게임">
+      <change afterPath="$PROJECT_DIR$/python_grammer/python_grammer/bigO.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_grammer/python_grammer/lambda_.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_grammer/python_grammer/lambda_.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/그리디/거스름돈.py" beforeDir="false" afterPath="$PROJECT_DIR$/그리디/거스름돈.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/그리디/숫자카드게임.py" beforeDir="false" afterPath="$PROJECT_DIR$/그리디/숫자카드게임.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +142,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="숫자카드게임" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="algo-study" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/그리디" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/그리디/숫자카드게임.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="큰수의법칙" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="algo-study" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -153,28 +178,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/그리디/큰수의법칙.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="_ltertools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="algo-study" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_grammer/library" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_grammer/library/_ltertools.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -205,13 +208,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="lambda_" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="algo-study" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_grammer/python_grammer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_grammer/python_grammer/lambda_.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.숫자카드게임" />
+        <item itemvalue="Python.lambda_" />
         <item itemvalue="Python.거스름돈" />
         <item itemvalue="Python.dictionary" />
         <item itemvalue="Python.Datatype" />
-        <item itemvalue="Python._ltertools" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +253,8 @@
       <workItem from="1614559334380" duration="3275000" />
       <workItem from="1614659165186" duration="9948000" />
       <workItem from="1614778288137" duration="5001000" />
-      <workItem from="1614863552978" duration="1512000" />
+      <workItem from="1614863552978" duration="1892000" />
+      <workItem from="1614944215081" duration="3487000" />
     </task>
     <task id="LOCAL-00001" summary="문법정리">
       <created>1614778341504</created>
@@ -244,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614782717715</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="그리디 알고리즘 - 숫자카드게임">
+      <created>1614866043952</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614866043952</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,12 +298,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="문법정리" />
     <MESSAGE value="그리디 알고리즘" />
-    <option name="LAST_COMMIT_MESSAGE" value="그리디 알고리즘" />
+    <MESSAGE value="그리디 알고리즘 - 숫자카드게임" />
+    <option name="LAST_COMMIT_MESSAGE" value="그리디 알고리즘 - 숫자카드게임" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/algo_study$Datatype.coverage" NAME="Datatype Coverage Results" MODIFIED="1613992797815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_grammer" />
     <SUITE FILE_PATH="coverage/algo_study$dictionary.coverage" NAME="dictionary Coverage Results" MODIFIED="1613992871019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_grammer/python_grammer" />
-    <SUITE FILE_PATH="coverage/algo_study$.coverage" NAME="큰수의법칙 Coverage Results" MODIFIED="1614782243421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/그리디" />
+    <SUITE FILE_PATH="coverage/algo_study$.coverage" NAME="숫자카드게임 Coverage Results" MODIFIED="1614865829807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/그리디" />
     <SUITE FILE_PATH="coverage/algo_study$_ltertools.coverage" NAME="_ltertools Coverage Results" MODIFIED="1614671619549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_grammer/library" />
+    <SUITE FILE_PATH="coverage/algo_study$lambda_.coverage" NAME="lambda_ Coverage Results" MODIFIED="1614945240104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_grammer/python_grammer" />
   </component>
 </project>
