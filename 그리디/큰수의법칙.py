@@ -40,3 +40,20 @@ result += count * first
 result += (m - count) * second
 
 print(result)
+
+# # 5 8 3
+# n, m, k = map(int, input().split())
+#
+# array = list(map(int, input().split()))
+# array.sort()  # 1 2 3 4 5
+#
+# first = array[-1]
+# second = array[-2]
+# result = 0
+#
+# while m > 0:
+#     for i in range(n):
+#         m -= 1
+#         result += first
+#     result += second
+#     m -= 1
