@@ -1,7 +1,10 @@
+# 행 열
 n, m = map(int, input().split())
 
 array = []
 
+# 3 1 2
+# 2 1 4
 for i in range(n):
     array.append(list(map(int, input().split())))
 
