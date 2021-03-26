@@ -8,3 +8,16 @@ for i in range(1, len(array)):
             array[j], array[j - 1] = array[j - 1], array[j]
         else:
             break
+
+# 시간 복잡도 - 반복문이 2번 충첩되어 사용되었지만
+# 데이터가 어느정도 정렬 되어 있다면 빠르게 동작함
+
+####################################################
+array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
+
+for i in range(len(array)):
+    for j in range(i, 0, -1):
+        if array[j] < array[j-1]:
+            array[j], array[j-1] = array[j-1], array[j]
+        else:
+            break
