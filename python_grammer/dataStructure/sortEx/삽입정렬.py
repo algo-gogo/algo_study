@@ -21,3 +21,15 @@ for i in range(len(array)):
             array[j], array[j-1] = array[j-1], array[j]
         else:
             break
+
+# 예제) 7 1 9 2 6 3 5 0 4 8
+# ->   1 7 9 2 6 3 5 0 4 8
+# ->   1 7 9 2 6 3 5 0 4 8
+# ->   1 2 7 9 6 3 5 0 4 8 ....
+
+# for i in range(len(array)):
+#     for j in range(i, 0, -1):
+#         if array[j] < array[j-1]:
+#             array[j], array[j-1] = array[j-1], array[j]
+#         else:
+#             break
