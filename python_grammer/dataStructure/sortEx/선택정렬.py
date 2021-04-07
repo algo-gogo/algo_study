@@ -26,3 +26,13 @@ for i in range(len(array)):
         array[i], array[min_value] = array[min_value], array[i]
 
 print(array)
+
+################################# 스왑
+a = 3;
+b = 5;
+
+temp = a;
+a = b;
+b = temp;
+
+a, b = b, a

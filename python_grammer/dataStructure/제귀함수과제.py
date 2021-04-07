@@ -26,5 +26,8 @@ def recursiveFunction3(n):
 
 recursiveFunction3(3)
 
+# 재귀함수 나올 때 적용해보기
+# DFS에 적용해보기
+
 # 그림은 위키에
 
