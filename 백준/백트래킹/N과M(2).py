@@ -1,4 +1,3 @@
-### 잘 이해해보기
 n, m = list(map(int, input().split()))
 s = []
 
