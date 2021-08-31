@@ -2,58 +2,56 @@
 # nList = list(map(int, input().split()))
 # m = int(input())
 # mList = list(map(int, input().split()))
+#
+#
+# def binarySearch(target, data):
+#     data.sort()
+#     start = 0
+#     end = len(data) - 1
+#
+#     while start <= end:
+#         mid = (start + end) // 2
+#
+#         if data[mid] == target:
+#             return data[mid]
+#         elif data[mid] < target:
+#             start = mid + 1
+#         else:
+#             end = mid - 1
+#     return None
+#
+#
+# for i in mList:
+#     search = binarySearch(i, nList)
+#     if i == search:
+#         print('1')
+#     else:
+#         print('0')
 
 import sys
+
 n = sys.stdin.readline().rstrip()
-
 nList = list(map(int, sys.stdin.readline().rstrip().split()))
-
+nList.sort()
 m = sys.stdin.readline().rstrip()
-
 mList = list(map(int, sys.stdin.readline().rstrip().split()))
 
 
-def binarySearch(list, num):
-    list.sort()
-    start = 0
-    end = len(list) - 1
-    while start <= end:
-        mid = (start + end) // 2
-        if list[mid] == num:
-            return mid
-        elif list[mid] < num:
-            start = mid + 1
-        else:
-            end = mid - 1
-    return False
+def binary_search(element, list, start=0, end=None):
+    if end == None:
+        end = len(list) - 1
+    if start > end:
+        return 0
+
+    mid = (start + end) // 2
+    if element == list[mid]:
+        return 1
+    elif element < list[mid]:
+        end = mid - 1
+    else:
+        start = mid + 1
+    return binary_search(element, list, start, end)
 
 
 for i in mList:
-    search = binarySearch(nList, i)
-    if not search:
-        print('0')
-    else:
-        print('1')
-
-#
-# from sys import stdin, stdout
-# n = stdin.readline()
-# N = sorted(map(int,stdin.readline().split()))
-# m = stdin.readline()
-# M = map(int, stdin.readline().split())
-#
-# def binary(l, N, start, end):
-#     if start > end:
-#         return 0
-#     m = (start+end)//2
-#     if l == N[m]:
-#         return 1
-#     elif l < N[m]:
-#         return binary(l, N, start, m-1)
-#     else:
-#         return binary(l, N, m+1, end)
-#
-# for l in M:
-#     start = 0
-#     end = len(N)-1
-#     print(binary(l,N,start,end))
+    print(binary_search(i, nList))

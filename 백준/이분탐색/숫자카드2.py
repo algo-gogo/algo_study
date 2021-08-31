@@ -1,34 +1,33 @@
-### 시간 초과 -> 다시풀기
+# import sys
+#
+# n = sys.stdin.readline().rstrip()
+# nList = list(map(int, sys.stdin.readline().rstrip().split()))
+# m = sys.stdin.readline().rstrip()
+# mList = list(map(int, sys.stdin.readline().rstrip().split()))
+# resultDic = {}
+#
+# for i in mList:
+#     resultDic[i] = 0
+#
+# for i in nList:
+#     if i in resultDic:
+#         resultDic[i] += 1
+#
+# for i in resultDic:
+#     print(resultDic[i], end=' ')
 
 n = int(input())
-
-nList = list(map(int, input().split()))
-
-m = int(input())
-
-mList = list(map(int, input().split()))
-
-def binarySearch(list, num):
-    list.sort()
-    start = 0
-    end = len(list) - 1
-    while start <= end:
-        mid = (start + end) // 2
-        if list[mid] == num:
-            return mid
-        elif list[mid] < num:
-            start = mid + 1
-        else:
-            end = mid - 1
-    return False
-
-for i in mList:
-    search = binarySearch(nList, i)
-    if not search:
-        print('0')
+arr1 = list(map(int, input().split()))
+dict1 = dict()
+for i in arr1:
+    if i in dict1:
+        dict1[i] += 1
     else:
-        count = 0
-        for j in nList:
-            if i == j:
-                count += 1
-        print(count)
+        dict1[i] = 1
+m = int(input())
+arr2 = list(map(int, input().split()))
+for i in arr2:
+    if i in dict1:
+        print(dict1[i], end=' ')
+    else:
+        print(0, end=' ')
