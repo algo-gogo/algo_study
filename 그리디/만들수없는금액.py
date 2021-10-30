@@ -9,13 +9,23 @@ nList = list(map(int, input().split()))
 
 nList.sort()
 print(nList)
+#
+# result = 0
+# first = nList[0]
+# for i in nList:
+#     if first != 1:
+#         result = 1
+#         break
+#     result += i
+#     if result < i:
+#         break
+#
+# print(result)
 
-result = 1
-first = nList[0]
+target = 1
 for i in nList:
-    if first != 1:
-        result = 1
+    if target < i:
         break
+    target += i
 
-
-print(result)
+print(target)
