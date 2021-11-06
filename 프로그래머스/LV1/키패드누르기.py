@@ -1,29 +1,34 @@
 def solution(numbers, hand):
-    right = []
-    left = []
+    right = [10]
+    left = [12]
     result = ""
     for i in numbers:
-        if i == 1 or i == 4 or i == 7:
+        if i in (1, 4 ,7):
             left.append(i)
             result += "L"
-        if i == 3 or i == 6 or i == 9:
+        elif i in (3, 6, 9):
             right.append(i)
             result += "R"
-        if i == 2 or i == 5 or i == 8 or i == 0:
-            lefthand = abs(i - left[-1])
-            righthand = abs(i - right[-1])
-            if sum(divmod(lefthand, 3)) < sum(divmod(righthand, 3)):
+        else:
+            if i == 0:
+                i = 11
+            leftHand = abs(i - left[-1])
+            rightHand = abs(i - right[-1])
+            if leftHand % 3 + leftHand // 3 < rightHand % 3 + rightHand // 3:
                 result += "L"
                 left.append(i)
-            if sum(divmod(lefthand, 3)) > sum(divmod(righthand, 3)):
+            if leftHand % 3 + leftHand // 3 > rightHand % 3 + rightHand // 3:
                 result += "R"
                 right.append(i)
-            if sum(divmod(lefthand, 3)) == sum(divmod(righthand, 3)):
+            if leftHand % 3 + leftHand // 3 == rightHand % 3 + rightHand // 3:
                 if hand == "right":
+                    right.append(i)
                     result += "R"
                 else:
+                    left.append(i)
                     result += "L"
+
     return result
 
 
-print(solution([1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5], "right"))
+print(solution([7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2], "left"))
