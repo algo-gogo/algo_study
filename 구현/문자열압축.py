@@ -2,7 +2,25 @@
 # 출력: 가장 짧게 압축경우
 
 def solution(s):
+    if len(s) < 3:
+        return len(s)
 
+    length = len(s)
+    countList = []
+    for i in range(1, len(s)):
+        # a
+        strings = s[:i]
+        count = 0
+        result = ''
+        for j in range(i, length // len(strings)):
+            if strings == s[j:j + i]:
+                count += 1
+            else:
+                result += strings
+
+        countList.append(count)
+
+    print(min(countList))
 
     answer = 0
     return answer
