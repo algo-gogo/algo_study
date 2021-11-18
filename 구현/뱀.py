@@ -44,6 +44,7 @@ for i in range(directCount):
         nx = startX + dx[direct]
         ny = startY + dy[direct]
         result += 1
+        # 벽에 부딫힐 경우
         if 0 <= nx < n and 0 <= ny < n:
             startX = nx
             startY = ny
