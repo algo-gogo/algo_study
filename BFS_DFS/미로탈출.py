@@ -5,13 +5,13 @@
 # 출력 : 최소 경로의 수
 
 # BFS 사용 - 가장 인접한 부분으로 가야해서
-from collections import deque
+# from collections import deque
 
-n, m = map(int, input().split())  # 행, 렬
-
-array = []
-for i in range(n):
-    array.append(list(map(int, input())))  # 행렬
+# n, m = map(int, input().split())  # 행, 렬
+#
+# array = []
+# for i in range(n):
+#     array.append(list(map(int, input())))  # 행렬
 
 # 상하좌우
 # dx = [-1, 1, 0, 0]
@@ -39,31 +39,31 @@ for i in range(n):
 # print(bfs(0, 0))
 ###################################
 
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
-
-
-# d = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-
-
-def bfs(x, y):
-    queue = deque()
-    queue.append((x, y))
-    while queue:
-        x, y = queue.popleft()
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-            if 0 <= nx < n and 0 <= ny < m and array[nx][ny] == 1:
-                array[nx][ny] = array[x][y] + 1
-                queue.append((nx, ny))
-            else:
-                continue
-
-    return array[n - 1][m - 1]
-
-
-print(bfs(0, 0))
+# dx = [-1, 1, 0, 0]
+# dy = [0, 0, -1, 1]
+#
+#
+# # d = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+#
+#
+# def bfs(x, y):
+#     queue = deque()
+#     queue.append((x, y))
+#     while queue:
+#         x, y = queue.popleft()
+#         for i in range(4):
+#             nx = x + dx[i]
+#             ny = y + dy[i]
+#             if 0 <= nx < n and 0 <= ny < m and array[nx][ny] == 1:
+#                 array[nx][ny] = array[x][y] + 1
+#                 queue.append((nx, ny))
+#             else:
+#                 continue
+#
+#     return array[n - 1][m - 1]
+#
+#
+# print(bfs(0, 0))
 ########################################
 # 110
 # 010
@@ -105,3 +105,39 @@ print(bfs(0, 0))
 #                 check[nx][ny] = True
 #
 # print(dist[n - 1][m - 1])
+
+# -----------------------------------------------------------------------
+
+from collections import deque
+
+# 상 하 좌 우
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
+
+n, m = map(int, input().split())  # 행, 렬
+
+array = []
+for i in range(n):
+    array.append(list(map(int, input())))  # 행렬
+
+
+### 큐에 넣고
+def bfs(x, y):
+    queue = deque()
+    queue.append((x, y))
+    while queue:
+        x, y = queue.popleft()
+        for direction in range(4):
+            nx = x + dx[direction]
+            ny = y + dy[direction]
+            if 0 <= nx < n and 0 <= ny < m:
+                if array[nx][ny] == 1:
+                    array[nx][ny] = array[x][y] + 1
+                    queue.append((nx, ny))
+            else:
+                continue
+
+    return array[n - 1][m - 1]
+
+
+print(bfs(0, 0))
