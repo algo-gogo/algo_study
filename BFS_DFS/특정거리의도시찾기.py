@@ -12,32 +12,35 @@ from collections import deque
 
 n, m, k, x = map(int, input().split())
 
-array = []
-for i in range(m):
-    array.append(list(map(int, input().split())))
+graph = [[] for _ in range(n+1)]
+distance = [0] * (n + 1)
+visited = [False] * (n + 1)
 
+for _ in range(m):
+    a, b = map(int, input().split())
+    graph[a].append(b)
 
-def bfs(city):
+def bfs(start):
+    answer = []
     queue = deque()
-    queue.append(city)
-    distance = 0
+    queue.append(start)
+    visited[start] = True
+    distance[start] = 0
     while queue:
-        start = queue.popleft()
-        for a in array:
-            if a[0] + 1 == start:
-                distance += 1
-                queue.append(a[1] + 1)
+        now = queue.popleft()
+        for i in graph[now]:
+            if not visited[i]:
+                visited[i] = True
+                queue.append(i)
+                distance[i] = distance[now] + 1
+                if distance[i] == k:
+                    answer.append(i)
+    if len(answer) == 0:
+        print(-1)
+    else:
+        answer.sort()
+        for i in answer:
+            print(i)
 
-    return distance
 
-
-resultList = []
-for i in range(n):
-    if bfs(n) == k:
-        resultList.append(n)
-
-if len(resultList) == 0:
-    print(-1)
-else:
-    for i in resultList:
-        print(i, end=' ')
+bfs(x)
