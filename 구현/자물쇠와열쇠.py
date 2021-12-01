@@ -15,7 +15,7 @@ def check(startX, startY, key, lock, expendSize, start, end):
             expendList[startX + i][startY + j] += key[i][j]
 
     for i in range(start, end):
-        for j in range(start, end):현
+        for j in range(start, end):
             expendList[i][j] += lock[i - start][j - start]
             if expendList[i][j] != 1:
                 return False
