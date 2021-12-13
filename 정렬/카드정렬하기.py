@@ -19,7 +19,7 @@ print(nList)
 
 result = 0
 length = len(nList)
-sumN = 0렬
+sumN = 0
 for i in range(length - 1):
     sumN = nList[0] + nList[1]
     del nList[0]
