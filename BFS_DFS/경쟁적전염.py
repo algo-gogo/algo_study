@@ -35,23 +35,35 @@ for i in range(n):
                 queue.append((i, j, k, 0))
 
 
+# def spread(x, y, k, time):
+#     if 0 <= x + 1 < n and 0 <= y < n:
+#         if array[x + 1][y] == 0:
+#             array[x + 1][y] = k
+#             queue.append((x+1, y, k, time + 1))
+#     if 0 <= x - 1 < n and 0 <= y < n:
+#         if array[x - 1][y] == 0:
+#             array[x - 1][y] = k
+#             queue.append((x - 1, y, k, time + 1))
+#     if 0 <= x < n and 0 <= y + 1 < n:
+#         if array[x][y + 1] == 0:
+#             array[x][y + 1] = k
+#             queue.append((x, y + 1, k, time + 1))
+#     if 0 <= x < n and 0 <= y - 1 < n:
+#         if array[x][y - 1] == 0:
+#             array[x][y - 1] = k
+#             queue.append((x, y - 1, k, time + 1))
+
+# 상 하 좌 우
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
 def spread(x, y, k, time):
-    if 0 <= x + 1 < n and 0 <= y < n:
-        if array[x + 1][y] == 0:
-            array[x + 1][y] = k
-            queue.append((x+1, y, k, time + 1))
-    if 0 <= x - 1 < n and 0 <= y < n:
-        if array[x - 1][y] == 0:
-            array[x - 1][y] = k
-            queue.append((x - 1, y, k, time + 1))
-    if 0 <= x < n and 0 <= y + 1 < n:
-        if array[x][y + 1] == 0:
-            array[x][y + 1] = k
-            queue.append((x, y + 1, k, time + 1))
-    if 0 <= x < n and 0 <= y - 1 < n:
-        if array[x][y - 1] == 0:
-            array[x][y - 1] = k
-            queue.append((x, y - 1, k, time + 1))
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if 0 <= nx < n and 0 <= ny < n:
+            if array[nx][ny] == 0:
+                array[nx][ny] = k
+                queue.append((nx, ny, k, time + 1))
 
 # for time in range(s):
 #     for i in range(n):
