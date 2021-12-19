@@ -24,43 +24,43 @@ print(array)
 
 ### True - 감시 피할 수 있음
 ### False - 감시 피할 수 없음
-def left(x, y):
+def left(x, y, arrayCopy):
     if 0 <= x < n and 0 <= y - 1 < n:
         if arrayCopy[x][y - 1] == 'O':
             return True
         if arrayCopy[x][y - 1] == 'S':
             return False
-        return left(x, y - 1)
+        return left(x, y - 1, arrayCopy)
     return True
 
 
-def right(x, y):
+def right(x, y, arrayCopy):
     if 0 <= x < n and 0 <= y + 1 < n:
         if arrayCopy[x][y + 1] == 'O':
             return True
         if arrayCopy[x][y + 1] == 'S':
             return False
-        return right(x, y + 1)
+        return right(x, y + 1, arrayCopy)
     return True
 
 
-def up(x, y):
+def up(x, y, arrayCopy):
     if 0 <= x - 1 < n and 0 <= y < n:
         if arrayCopy[x - 1][y] == 'O':
             return True
         if arrayCopy[x - 1][y] == 'S':
             return False
-        return up(x - 1, y)
+        return up(x - 1, y, arrayCopy)
     return True
 
 
-def down(x, y):
+def down(x, y, arrayCopy):
     if 0 <= x + 1 < n and 0 <= y < n:
         if arrayCopy[x + 1][y] == 'O':
             return True
         if arrayCopy[x + 1][y] == 'S':
             return False
-        return down(x + 1, y)
+        return down(x + 1, y, arrayCopy)
     return True
 
 
@@ -73,6 +73,7 @@ selectXList = list(combinations(xList, 3))
 print(selectXList)
 
 resultList = []
+resultList2 = []
 for selectX in selectXList:
     arrayCopy = copy.deepcopy(array)
     for x, y in selectX:
@@ -81,7 +82,19 @@ for selectX in selectXList:
     for i in range(n):
         for j in range(n):
             if arrayCopy[i][j] == 'T':
-                resultList.append(right(i, j))
-                resultList.append(left(i, j))
-                resultList.append(up(i, j))
-                resultList.append(down(i, j))
+                resultList.append(right(i, j, arrayCopy))
+                resultList.append(left(i, j, arrayCopy))
+                resultList.append(up(i, j, arrayCopy))
+                resultList.append(down(i, j, arrayCopy))
+
+    if False in resultList:
+        resultList2.append("NO")
+    else:
+        resultList2.append("YES")
+    resultList = []
+
+print(resultList2)
+if 'YES' in resultList2:
+    print("YES")
+else:
+    print("NO")
