@@ -2,49 +2,49 @@
 # 입력: N 과 N개의 부품숫자, M 과 M개의 부품 숫자
 # 출력 M개의 yes or NO
 
-arrayN = []
-arrayM = []
-n = int(input())
-arrayN = list(map(int, input().split()))
-arrayN.sort()
-m = int(input())
-arrayM = list(map(int, input().split()))
-arrayM.sort()
-
-
-def binary_search(array, target, start, end):
-    if start > end:
-        return None
-    mid = (start + end) // 2
-    if array[mid] == target:
-        return mid
-    elif array[mid] < target:
-        return binary_search(array, target, mid + 1, end)
-    else:
-        return binary_search(array, target, start, end - 1)
-
-
-for i in arrayM:  # i 는 5 7 9
-    result = binary_search(arrayN, i, 0, n - 1)
-    if result != None:
-        print("yes", end=" ")
-    else:
-        print("no", end=" ")
-
-
-##################################################
-# 반복 이진 탐색
-
-def binary_search(array, target, start, end):
-    while start <= end:
-        mid = (start + end) // 2
-        if target == array[mid]:
-            return mid
-        elif array[mid] < target:
-            start = mid + 1
-        else:
-            end = mid - 1
-    return None
+# arrayN = []
+# arrayM = []
+# n = int(input())
+# arrayN = list(map(int, input().split()))
+# arrayN.sort()
+# m = int(input())
+# arrayM = list(map(int, input().split()))
+# arrayM.sort()
+#
+#
+# def binary_search(array, target, start, end):
+#     if start > end:
+#         return None
+#     mid = (start + end) // 2
+#     if array[mid] == target:
+#         return mid
+#     elif array[mid] < target:
+#         return binary_search(array, target, mid + 1, end)
+#     else:
+#         return binary_search(array, target, start, end - 1)
+#
+#
+# for i in arrayM:  # i 는 5 7 9
+#     result = binary_search(arrayN, i, 0, n - 1)
+#     if result != None:
+#         print("yes", end=" ")
+#     else:
+#         print("no", end=" ")
+#
+#
+# ##################################################
+# # 반복 이진 탐색
+#
+# def binary_search(array, target, start, end):
+#     while start <= end:
+#         mid = (start + end) // 2
+#         if target == array[mid]:
+#             return mid
+#         elif array[mid] < target:
+#             start = mid + 1
+#         else:
+#             end = mid - 1
+#     return None
 
 ################################################################
 # 계수 정렬
@@ -66,3 +66,34 @@ def binary_search(array, target, start, end):
 #         print("yes", end=" ")
 #     else:
 #         print("no", end=" ")
+
+
+##############################################################
+
+n = int(input())
+nList = list(map(int, input().split()))
+
+m = int(input())
+mList = list(map(int, input().split()))
+
+nList.sort()
+print(nList)
+print(mList)
+
+
+def binarySearch(array, start, end, target):
+    while start <= end:
+        mid = (start + end) // 2
+        if array[mid] == target:
+            return True
+        if target > array[mid]:
+            start = mid + 1
+        if target < array[mid]:
+            end = mid - 1
+    return False
+
+for i in mList:
+    if binarySearch(nList, 0, len(nList), i):
+        print('yes')
+    else:
+        print('no')
