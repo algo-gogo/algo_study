@@ -16,6 +16,7 @@ print(visited)
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
+
 def bfs(x, y):
     queue = deque()
     queue.append((x, y))
@@ -48,21 +49,17 @@ def bfs(x, y):
         array[cx][cy] = countryNum // len(country)
     return True
 
+
 result = 0
 while True:
     breakPoint = False
-    visited = [[False for _ in range(n)] for _ in range(n)]
     for i in range(n):
         for j in range(n):
+            visited = [[False for _ in range(n)] for _ in range(n)]
             if bfs(i, j):
                 result += 1
-            else:
                 breakPoint = True
-                if breakPoint:
-                    break
-        if breakPoint:
-            break
-    if breakPoint:
+    if not breakPoint:
         break
 
 print(result)

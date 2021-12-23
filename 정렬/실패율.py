@@ -5,6 +5,8 @@
 def solution(n, stages):
     answer = [[0.0, 0] for _ in range(n)]
     length = len(stages)
+    if length == 1:
+        return stages[0]
     for i in range(1, n + 1):
         result = 0
         for j in range(len(stages)):
