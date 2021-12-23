@@ -15,7 +15,6 @@
 
 from collections import deque
 
-queue = deque()
 n, m = map(int, input().split())
 
 array = []
@@ -27,31 +26,15 @@ for i in range(n):
 s, x, y = map(int, input().split())
 
 print(array)
-
+queue = []
 for i in range(n):
     for j in range(n):
-        for k in range(1, m + 1):
-            if array[i][j] == k:
-                queue.append((i, j, k, 0))
+        if array[i][j] != 0:
+            queue.append((i, j, array[i][j], 0))
 
-
-# def spread(x, y, k, time):
-#     if 0 <= x + 1 < n and 0 <= y < n:
-#         if array[x + 1][y] == 0:
-#             array[x + 1][y] = k
-#             queue.append((x+1, y, k, time + 1))
-#     if 0 <= x - 1 < n and 0 <= y < n:
-#         if array[x - 1][y] == 0:
-#             array[x - 1][y] = k
-#             queue.append((x - 1, y, k, time + 1))
-#     if 0 <= x < n and 0 <= y + 1 < n:
-#         if array[x][y + 1] == 0:
-#             array[x][y + 1] = k
-#             queue.append((x, y + 1, k, time + 1))
-#     if 0 <= x < n and 0 <= y - 1 < n:
-#         if array[x][y - 1] == 0:
-#             array[x][y - 1] = k
-#             queue.append((x, y - 1, k, time + 1))
+queue.sort(key=lambda x:x[2])
+queue = deque(queue)
+print(queue)
 
 # 상 하 좌 우
 dx = [-1, 1, 0, 0]
@@ -65,15 +48,7 @@ def spread(x, y, k, time):
                 array[nx][ny] = k
                 queue.append((nx, ny, k, time + 1))
 
-# for time in range(s):
-#     for i in range(n):
-#         for j in range(n):
-#             for k in range(1, m + 1):
-#                 if array[i][j] == k:
-#                     spread(i, j, k)
 
-
-print(queue)
 while queue:
     qx, qy, qk, qTime = queue.popleft()
     if s == qTime:
