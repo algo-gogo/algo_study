@@ -16,6 +16,8 @@ print(visited)
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
+# def isCompleted():
+#     checked = []
 
 def bfs(x, y):
     queue = deque()
@@ -51,15 +53,17 @@ def bfs(x, y):
 
 
 result = 0
+
 while True:
     breakPoint = False
+    visited = [[False for _ in range(n)] for _ in range(n)]
     for i in range(n):
         for j in range(n):
-            visited = [[False for _ in range(n)] for _ in range(n)]
             if bfs(i, j):
-                result += 1
                 breakPoint = True
     if not breakPoint:
         break
+    result += 1
+
 
 print(result)
