@@ -31,7 +31,7 @@ def addOperation():
 
 
 operationList = addOperation()
-selectOperation = list(permutations(operationList, len(operationList)))
+selectOperation = list(set(permutations(operationList, len(operationList))))
 print(selectOperation)
 
 length = len(operationList)
