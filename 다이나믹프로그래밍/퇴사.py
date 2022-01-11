@@ -8,5 +8,9 @@ for i in range(n):
 
 print(nList)
 
-d = [[0] for i in range(n)]
+d = [[] for i in range(n)]
 print(d)
+
+for i in range(len(nList) - 1, 0, -1):
+    for j in range(len(d)):
+        nList[i][0]
