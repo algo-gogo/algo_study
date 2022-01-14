@@ -8,9 +8,12 @@ for i in range(n):
 
 print(nList)
 
-d = [[] for i in range(n)]
+d = [0 for i in range(n)]
 print(d)
 
+length = len(nList)
+
 for i in range(len(nList) - 1, 0, -1):
-    for j in range(len(d)):
-        nList[i][0]
+    for j in range(len(nList) - i):
+        if nList[length - j - 1][0] <= j + 1:
+            d[j] = max(d[j])
