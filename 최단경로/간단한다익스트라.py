@@ -1,12 +1,12 @@
 import sys
 
-input = sys.stdin.readline()
+inputr = sys.stdin.readline()
 
 INF = int(1e9)
 # 노드의 개수, 간선의 개수
-n, m = map(int, input().split())
+n, m = map(int, inputr.split())
 # 시작 노드 입력
-start = int(input())
+start = int(inputr)
 # 각 노드에 연결 되어 있는 노드에 대한 정보를 담는 리스트를 만들기
 graph = [[] for i in range(n + 1)]
 # 방문한 적이 있는지 체크
@@ -17,7 +17,7 @@ distance = [INF] * (n + 1)
 for _ in range(m):
     a, b, c = map(int, input().split())
     # a번 노드에서 b번 노드로 가는 비용이 c
-    graph[a].append((b,c))
+    graph[a].append((b, c))
     # 방문하지 않은 노드 중에서, 가장 최단 거리가 짧은 노드의 번호를 반환
 
 def get_smallest_node():
