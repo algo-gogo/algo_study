@@ -29,4 +29,4 @@ for a in range(1, n+1):
             print("INFINITY", end=" ")
         else:
             print(graph[a][b], end=" ")
-    print();
+    print()
