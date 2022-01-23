@@ -62,7 +62,6 @@
 # 4 5
 # 4번 회사를 방문한 뒤 5번 회사로 간다.
 
-
 import heapq
 
 n, m = map(int, input().split())
@@ -98,3 +97,60 @@ else:
     print(distance)
 
 ########### 다익스트라로 풀어보기
+#
+# 5 7
+# 1 2
+# 1 3
+# 1 4
+# 2 4
+# 3 4
+# 3 5
+# 4 5
+# 4 5
+# 5번 회사를 방문한 뒤 4번 회사로 간다.
+#
+# import heapq
+#
+# INF = int(1e9)
+# n, m = map(int, input().split())
+#
+# start = 1
+# graph = [[] for i in range(n + 1)]
+#
+# for _ in range(m):
+#     a, b = map(int, input().split())
+#     graph[a].append((b, 1))
+#     graph[b].append((a, 1))
+#
+# # 4, 5
+# x, k = map(int, input().split())
+# print(graph)
+#
+# def dijkstra(start, distance):
+#     q = []
+#     heapq.heappush(q, (0, start))
+#     distance[start] = 0
+#     while q:
+#         dist, now = heapq.heappop(q)
+#         if distance[now] < dist:
+#             continue
+#         for i in graph[now]:
+#             cost = dist + i[1]
+#             if cost < distance[i[0]]:
+#                 distance[i[0]] = cost
+#                 heapq.heappush(q, (cost, i[0]))
+#
+# distance1 = [INF] * (n + 1)
+# dijkstra(1, distance1)
+# print(graph)
+# distance2 = [INF] * (n + 1)
+# dijkstra(k, distance2)
+# print(distance1)
+# print(distance2)
+#
+# print(distance1[k] + distance2[x])
+# minDistance = distance1[k] + distance2[x]
+# if minDistance == INF:
+#     print(-1)
+# else:
+#     print(minDistance)
