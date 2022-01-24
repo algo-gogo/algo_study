@@ -1,4 +1,4 @@
-# https://www.youtube.com/watch?v=Ha0w2dJa2Nk&list=PLVsNizTWUw7H9_of5YCB0FmsSc-K44y81&index=33
+# https://www.youtube.com/watch?v=Mw8W56qNL8U&list=PLVsNizTWUw7H9_of5YCB0FmsSc-K44y81&index=34
 
 def find_parent(parent, x):
     # 루트 노드가 아니라면, 루트 노드를 찾을 때까지 재귀적으로 호출
@@ -28,14 +28,17 @@ for i in range(e):
     a, b = map(int, input().split())
     union_parent(parent, a, b)
 
-# 각 원소가 속한 집합 출력
-print('각 원소가 속한 집합:', end="")
-for i in range(1, v + 1):
-    print(find_parent(parent, i), end="")
+cycle = False
 
-print()
+for i in range(e):
+    a, b = map(int, input().split())
+    if find_parent(parent, a) == find_parent(parent, b):
+        cycle = True
+        break
+    else:
+        union_parent(parent, a, b)
 
-# 부모 테이블 내용 출력
-print('부모 테이블', end="")
-for i in range(1, v + 1):
-    print(parent[i], end=" ")
+if cycle:
+    print("사이클 발생")
+else:
+    print("사이클 발생 X")
