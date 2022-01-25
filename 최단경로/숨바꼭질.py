@@ -17,7 +17,6 @@ def bfs(n, k):
                 nx = n * 2
             else:
                 nx = n + d[i]
-
             if 0 <= nx:
                 queue.append((nx, count + 1))
 
