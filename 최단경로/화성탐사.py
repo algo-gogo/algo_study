@@ -63,6 +63,36 @@ for _ in range(t):
 
     print(dijkstra(0, 0, graph))
 
+########### dfs로
+#
+# import heapq
+# dx = [-1, 1, 0, 0]
+# dy = [0, 0, -1, 1]
+#
+# INF = int(1e9)
+#
+# def dfs(x, y, visited, value):
+#     q = []
+#     realValue = graph[x][y] + value
+#     if 0 <= x < n and 0 <= y < n and not visited[x][y]:
+#         for direct in range(4):
+#             nx = x + dx[direct]
+#             ny = y + dy[direct]
+#             heapq.heappush(q, (graph[nx][ny], nx, ny))
+#         nValue, nx, ny = heapq.heappop(q)
+#         return dfs(nx, ny, visited, realValue + nValue)
+#     return realValue
+#
+# n = int(input())
+# graph = []
+# distance = [[INF] * n for _ in range(n)]
+# for i in range(n):
+#     l = list(map(int, input().split()))
+#     graph.append(l)
+#
+# visited = [[False for _ in range(n)] for _ in range(n)]
+#
+# print(dfs(0, 0, visited, 0))
 
 # ### bfs로 풀 수 있을듯?
 #
