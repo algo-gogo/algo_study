@@ -26,7 +26,7 @@ indegree = [0] * (v + 1)
 graph = [[] for i in range(v+1)]
 
 # 방향 그래프의 모든 간선 정보를 입력받기
-for _ in graph(e):
+for _ in range(e):
     a, b = map(int, input().split())
     graph[a].append(b)  # 정점 A 에서 B 로 이동가능
     # 진입차수 1 증가
