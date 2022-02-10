@@ -44,6 +44,7 @@ for _ in range(e):
     # 비용순으로 정렬하기 위해서 튜플의 첫 번째 원소를 비용으로 설정
     edges.append((cost, a, b))
 
+print(edges)
 edges.sort()
 
 for edge in edges:
@@ -54,3 +55,14 @@ for edge in edges:
         result += cost
 
 print(result)
+
+# 7 9
+# 1 2 29
+# 1 5 75
+# 2 3 35
+# 2 6 34
+# 3 4 7
+# 4 6 23
+# 4 7 13
+# 5 6 53
+# 6 7 25
