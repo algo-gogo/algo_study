@@ -18,6 +18,7 @@ print(bisect_left(a, x))
 print(bisect_right(a, x))
 
 
+################################## 이거 유심히 볼것!!~~!!!!!!!~~~~~~~~~~~~~~~~~~~~~~~
 def count_by_range(a, left_value, right_value):
     right_index = bisect_right(a, right_value)
     left_index = bisect_left(a, left_value)

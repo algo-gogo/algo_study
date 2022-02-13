@@ -30,10 +30,21 @@ print(array3)
 a = [1, 2, 3, 4, 5, 5, 5]
 remove_set = {3, 5}
 
-# 2차원 리스트를 초기화할 떄는 반드시 컴프리헨션을 이용해야함 *******************
-
 result = [i for i in a if i not in remove_set]
 print(result)
+
+# 2차원 리스트를 초기화할 떄는 반드시 컴프리헨션을 이용해야함 *******************
+
+n = 3
+m = 4
+array = [[0] * m] * n
+
+# 이런식으로 컴프리헨션 이용해야함 ****************************************
+array = [[0] * 4 for _ in range(3)]
+print(array)
+
+array[1][1] = 5
+
 
 # X in list
 # X not in 문자열
@@ -44,6 +55,7 @@ array4.append(3)
 array4.sort()
 array4.sort(reverse=True)
 array4.reverse()
+# insert, remove 는 O(N) 느려질 수가 있음
 array4.insert(2, 4)  # 인덱스 / 값
 array4.count()
 array4.remove(2)
