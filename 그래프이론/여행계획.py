@@ -38,14 +38,46 @@ result = 0
 
 graph = [[] for _ in range(n + 1)]
 
-print("parent", parent)
-
 for i in range(1, n + 1):
     parent[i] = i
 
+print("parent", parent)
+
 for i in range(n):
     l = list(map(int, input().split()))
-    graph.append(l)
+    for index, j in enumerate(l):
+        if j == 1:
+            graph[i + 1].append(index + 1)
+            union_parent(parent, i + 1, index + 1)
 
 print("graph", graph)
+print("parent", parent)
 
+# 2 3 4 3
+# plan = set(map(int, input().split()))
+#
+# resultList = []
+# for i in plan:
+#     result = find_parent(parent, i)
+#     resultList.append(result)
+#
+# print(set(resultList))
+#
+# if len(set(resultList)) > 1:
+#     print("NO")
+# else:
+#     print("YES")
+
+
+####################
+plan = list(map(int, input().split()))
+
+result = True
+for i in range(len(plan) - 1):
+    if find_parent(parent, plan[i]) != find_parent(parent, plan[i + 1]):
+        result = False
+
+if result:
+    print("YES")
+else:
+    print("NO")
