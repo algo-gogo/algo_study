@@ -19,6 +19,15 @@
 # 1
 # 1
 
+# 4
+# 6
+# 2
+# 2
+# 3
+# 3
+# 4
+# 4
+
 g = int(input())
 p = int(input())
 
@@ -27,27 +36,30 @@ for i in range(p):
     a = int(input())
     air.append(a)
 
-air.sort()
+# air.sort()
 print(air)
 
 dock = [False for _ in range(g + 1)]
 dock[0] = True
 print(dock)
-
+isFinish = False
 
 def findDockTrue(a):
     if dock[a]:
         if a == 0:
-            return
+            return False
         a -= 1
-        findDockTrue(a)
+        return findDockTrue(a)
     else:
         dock[a] = True
-        return
+        return True
 
 
 for index, a in enumerate(air):
-    findDockTrue(a)
+    aa = findDockTrue(a)
+    print(aa)
+    if not aa:
+        break
 
 print(dock)
 count = 0
