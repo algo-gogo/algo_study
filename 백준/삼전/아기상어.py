@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/16236
+
 from collections import deque
 
 # 3
