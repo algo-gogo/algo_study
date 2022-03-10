@@ -39,19 +39,50 @@
 
 ### 문자열 뒤집기
 
-s = list(map(int, input()))
+# s = list(map(int, input()))
+#
+# count = 0
+# firstValue = s[0]
+# for i in s:
+#     if i == firstValue:
+#         pass
+#     else:
+#         count += 1
+#         firstValue = i
+#
+# # print(count)
+# if count == 1:
+#     print(1)
+# else:
+#     print(count // 2)
+
+### 만들 수 없는 금액
+
+# n = int(input())
+#
+# nList = list(map(int, input().split()))
+#
+# nList.sort()
+# print(nList)
+#
+# result = 1
+# for i in nList:
+#     if result < i:
+#         break
+#     result += i
+#
+# print(result)
+
+### 볼링공 고르기
+n, m = map(int, input().split())
+nList = list(map(int, input().split()))
 
 count = 0
-firstValue = s[0]
-for i in s:
-    if i == firstValue:
-        pass
-    else:
-        count += 1
-        firstValue = i
+for i in range(len(nList)):
+    value = nList[i]
+    for j in range(i, len(nList)):
+        targetValue = nList[j]
+        if value != targetValue:
+            count += 1
 
-# print(count)
-if count == 1:
-    print(1)
-else:
-    print(count // 2)
+print(count)
