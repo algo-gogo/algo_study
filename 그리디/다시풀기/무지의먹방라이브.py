@@ -1,13 +1,14 @@
 # https://programmers.co.kr/learn/courses/30/lessons/42891
 
-def food_times_self(food_timesWithIndex, index):
+def food_times_self(food_timesWithIndex, index, plusIndex):
     index2 = (index + 1) % len(food_timesWithIndex)
-    if food_timesWithIndex[index][1] == 0:
-        food_times_self(food_timesWithIndex, index2)
-        return index2
+    if food_timesWithIndex[index2][1] == 0:
+        food_times_self(food_timesWithIndex, index2, plusIndex)
+        plusIndex += 1
+        return index2, plusIndex
     else:
         food_timesWithIndex[index2][1] = food_timesWithIndex[index2][1] - 1
-        return index2
+        return index2, plusIndex
 
 
 def solution(food_times, k):
@@ -19,23 +20,30 @@ def solution(food_times, k):
         food_timesWithIndex.append([i + 1, value])
     print(food_timesWithIndex)
     resultIndex = 0
+    plusIndex = 0
     for i in range(k):
-        index = i % len(food_times)
+        index = (i + plusIndex) % len(food_times)
         if food_timesWithIndex[index][1] == 0:
-            resultIndex = food_times_self(food_timesWithIndex, index)
+            print("i= ", i, end=' ')
+            print(food_timesWithIndex)
+            plusIndex += 1
+            resultIndex, plusIndex = food_times_self(food_timesWithIndex, index, plusIndex)
         else:
+            print("i= ", i, end=' ')
+            print(food_timesWithIndex)
             food_timesWithIndex[index][1] = food_timesWithIndex[index][1] - 1
             resultIndex = index
 
-    resultIndex = food_times_self(food_timesWithIndex, resultIndex)
+    print("resultIndex", resultIndex)
+    resultIndex, plusIndex = food_times_self(food_timesWithIndex, resultIndex, plusIndex)
     print(food_timesWithIndex)
     print(resultIndex)
     return resultIndex + 1
 
 
 
-# print(solution([3, 1, 2], 5))
+# print("답", solution([3, 1, 2], 5))
+#
+# print("답", solution([5, 7, 5], 8))
 
-# print(solution([5, 7, 5], 8))
-
-# print(solution([4, 2, 7], 8))
+print("답", solution([4, 2, 7], 10))
