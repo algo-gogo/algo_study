@@ -204,7 +204,7 @@ def find_fish(array, index):
 def move_fish(array, now_x, now_y):
     for i in range(1, 17):
         fish = find_fish(array, i)
-        if not fish:ㄷ
+        if not fish:
             continue
         else:
             for d in range(8):
