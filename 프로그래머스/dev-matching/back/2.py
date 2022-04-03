@@ -1,3 +1,16 @@
+# ["??b", "abc", "cc?"]
+# ?에 a b c 중 아무거나 들어가서
+# b b b
+# a b c
+# c c c
+
+# a b b
+# a b c
+# c c c
+
+# 이런식으로 아파벳들이 모두 이어져 있는 경우의 수
+
+
 from itertools import permutations
 from itertools import combinations
 
