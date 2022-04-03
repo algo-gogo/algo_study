@@ -47,3 +47,39 @@ def solution(food_times, k):
 # print("답", solution([5, 7, 5], 8))
 
 print("답", solution([4, 2, 7], 10))
+
+######### 다른 답지
+
+# def solution(food_times, k):
+#     remain_list = []
+#     length = len(food_times)
+#
+#     for i in range(length):
+#         remain_list.append(i + 1)
+#
+#     current_round = 1
+#
+#     current_item = 0
+#
+#     t = 0
+#     while t < k:
+#         for i in remain_list[:]:
+#             current_item = i
+#             if food_times[i - 1] >= current_round:
+#                 t += 1
+#
+#             if food_times[i - 1] <= current_round:
+#                 remain_list.remove(i)
+#
+#             if t == k + 1:
+#                 return i
+#
+#         current_round += 1
+#
+#         # print( remain_list )
+#
+#     if len(remain_list) > 0:
+#         return current_item
+#     else:
+#         return -1
+## remain_list[:]

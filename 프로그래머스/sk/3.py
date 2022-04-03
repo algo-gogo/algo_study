@@ -25,3 +25,5 @@ def comp_num_path_in_rect(start_pt, end_pt):
     w = end_pt[0] - start_pt[0]
     h = end_pt[1] - start_pt[1]
     return int(math.factorial(w+h) / (math.factorial(w) * math.factorial(h))) % 10000019
+
+print(solution(2, 2, [[1, 1], [2, 2]]))
