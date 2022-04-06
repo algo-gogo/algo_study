@@ -22,7 +22,7 @@ def solution(s):
 
     print(min(countList))
 
-    answer = 0
+    answer = min(countList)
     return answer
 
 print(solution("aabbaccc"))
