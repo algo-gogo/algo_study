@@ -45,5 +45,10 @@
 #     print(i, end='')
 # print(num_result)
 
+# if i.isnumeric():
+#         number.append(int(i))
+#     elif i.isalpha():
+#         alpha.append(i)
+
 #################################
 

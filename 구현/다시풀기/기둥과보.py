@@ -1,3 +1,5 @@
+# https://programmers.co.kr/learn/courses/30/lessons/60061
+
 def validate(x, y, a, l_list, m_list, n):
     # 기둥
     if a == 0:
@@ -48,7 +50,6 @@ def validate_remove(x, y, a, l_list, m_list, n):
         # 기둥 위에 있을 경우
         if [x, y - 1] in l_list:
             return True
-
         l_list.append([x, y])
         return False
     # 보
@@ -61,7 +62,10 @@ def validate_remove(x, y, a, l_list, m_list, n):
         if [x + 1, y - 1] in l_list:
             return True
         # 보 옆에 붙을 경우
-        if [x + 1, y] in m_list and [x - 1, y] in m_list:
+        ########## 조건 어떻게든 추가해보기 보가 떠있는지 체크
+        if [x + 1, y] in m_list and [x, y] in m_list:
+            return True
+        if [x - 1, y] in m_list and [x, y] in m_list:
             return True
 
         m_list.append([x, y])
@@ -98,6 +102,7 @@ def solution(n, build_frame):
 
     print(l_list)
     print(m_list)
+
     return answer
 
 
