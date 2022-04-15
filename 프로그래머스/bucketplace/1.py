@@ -18,32 +18,46 @@ def turn_direct(now_d, after_d):
 
 
 def solution(path):
+    global result
     answer = []
     time = 0
+    real_time = 0
     a = path[0]
     distance = 0
     length = len(path)
 
     for i in path:
+        result = ""
         after_d = i
         now_d = a
+
         time += 1
         if i == a:
             distance += 1
         else:
-            if time != length:
-                pass
+            if time == length:
+                break
             else:
                 if distance < 5:
                     direction = turn_direct(now_d, after_d)
-                    answer.append("Time")
+                    if real_time != 0:
+                        real_time -= 1
+                    result += "Time " + str(real_time) + ": Go straight " + str(distance * 100) + "m and turn " + direction
+                    answer.append(result)
                 else:
                     direction = turn_direct(now_d, after_d)
-                    answer.append("Time")
+                    real_time = time - 5
+                    if real_time != 0:
+                        real_time -= 1
+                    result += "Time " + str(real_time) + ": Go straight" + str(distance * 100) + "m and turn " + direction
+                    answer.append(result)
                 a = i
                 distance = 0
+                real_time = time
 
+    if result != "":
+        answer.append(result)
     return answer
 
-# print(solution("EEESEEEEEENNNN"))
+print(solution("EEESEEEEEENNNN"))
 # print(solution("SSSSSSWWWNNNNNN"))

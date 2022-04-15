@@ -40,7 +40,7 @@ def find_result(graph, key_list, length):
                 print("y", y)
                 print(copy_key_list)
                 # 겹치는 부분 +1 해줘서
-                copy_graph[x][y] = 1
+                copy_graph[x][y] += 1
 
             if check_all(copy_graph, length):
                 return True
@@ -50,6 +50,8 @@ def check_all(copy_graph, length):
     for i in range(length, length * 2):
         for j in range(length, length * 2):
             if copy_graph[i][j] == 0:
+                return False
+            if copy_graph[i][j] != 1:
                 return False
     return True
 

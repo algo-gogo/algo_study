@@ -102,8 +102,15 @@ def solution(n, build_frame):
 
     print(l_list)
     print(m_list)
+    for i in l_list:
+        i.append(0)
+    for i in m_list:
+        i.append(1)
+    l_m_list = l_list + m_list
+    l_m_list.sort()
+    print(l_m_list)
 
-    return answer
+    return l_m_list
 
 
 # print(solution(5,
