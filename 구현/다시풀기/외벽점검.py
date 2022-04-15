@@ -3,19 +3,27 @@ from itertools import permutations
 
 
 def solution(n, weak, dist):
-    answer = 0
-
     print(weak)
-    per_list = list(permutations(dist))
-    print(per_list)
+    length = len(weak)
+    cand = []
+    weak_point = weak + [w + n for w in weak]
 
-    for per in per_list:
-        print(per)
-        for p in per:
-            for w in weak:
-                print(w)
-
-    return answer
+    for i, start in enumerate(weak):
+        for friends in permutations(dist):
+            count = 1
+            position = start
+            # 친구 조합 배치
+            for friend in friends:
+                position += friend
+                # 끝 포인트까지 도달 못했을 때
+                if position < weak_point[i + length - 1]:
+                    count += 1
+                    position = [w for w in weak_point[i + 1: i + length]
+                                if w > position][0]
+                else:
+                    cand.append(count)
+                    break
+    return min(cand) if cand else -1
 
 
 print(solution(12, [1, 5, 6, 10], [1, 2, 3, 4]))
