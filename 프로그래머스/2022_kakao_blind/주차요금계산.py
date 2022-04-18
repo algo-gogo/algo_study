@@ -1,5 +1,15 @@
+import math
+
+def time_def(c_out, c_in):
+    split = c_out.split(":")
+    car_out = int(split[0]) * 60 + int(split[1])
+    in_split = c_in.split(":")
+    car_in = int(in_split[0]) * 60 + int(in_split[1])
+    return car_out - car_in
+
+
 def solution(fees, records):
-    answer = []
+
 
     # 기본 시간, 기본 요금, 단위 시간, 단위 요금
     print(fees)
@@ -24,8 +34,37 @@ def solution(fees, records):
                     car_list[j].append(a)
 
     print(car_check)
-    print(car_list)
 
+    for index, value in enumerate(car_list):
+        if len(value) % 2 == 0:
+            value.append(['23:59', 'OUT'])
+
+    print(car_list)
+    car_time = {}
+    for car in car_list:
+        print("car", car)
+        car_num = ''
+        car_t = 0
+        for i in range(len(car)):
+            if i == 0:
+                car_num = car[i]
+                car_time[car_num] = 0
+            else:
+                if car[i][1] == 'OUT':
+                    c_out = car[i][0]
+                    c_in = car[i - 1][0]
+                    car_t += time_def(c_out, c_in)
+        car_time[car_num] = car_t
+
+    car_time = sorted(car_time.items(), key=lambda item: int(item[0]))
+    print(car_time)
+    answer = []
+    for car in car_time:
+        if (car[1] - fees[0]) > 0:
+            money = (math.ceil((car[1] - fees[0]) / fees[2]) * fees[3]) + fees[1]
+        else:
+            money = fees[1]
+        answer.append(money)
     return answer
 
 
