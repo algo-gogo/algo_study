@@ -9,6 +9,7 @@ def solution(n, weak, dist):
     weak_point = weak + [w + n for w in weak]
 
     for i, start in enumerate(weak):
+        print(start)
         for friends in permutations(dist):
             count = 1
             position = start
