@@ -6,11 +6,12 @@ def solution(n, weak, dist):
     print(weak)
     length = len(weak)
     cand = []
-    weak_point = weak + [w + n for w in weak]
+    weak_point = weak + [w + n for w in weak] # 1 5 6 10 => 1 5 6 10 13 18 19 22
 
     for i, start in enumerate(weak):
         print(start)
         for friends in permutations(dist):
+            print(friends)
             count = 1
             position = start
             # 친구 조합 배치
@@ -21,6 +22,11 @@ def solution(n, weak, dist):
                     count += 1
                     position = [w for w in weak_point[i + 1: i + length]
                                 if w > position][0]
+                    temp = []
+                    for w in weak_point[i + 1: i + length]:
+                        if w > position:
+                            temp.append(w)
+                    position = temp[0]
                 else:
                     cand.append(count)
                     break
