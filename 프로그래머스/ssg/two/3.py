@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from collections import deque
 
 def date_range(start, end):
     start = datetime.strptime(start, "%Y/%m/%d")
@@ -16,7 +17,6 @@ def solution(masks, dates):
     for i in dates:
         if i.find('~') != -1:
             split = i.split('~')
-            print("split", split)
             start_date = split[0]
             end_date = split[1]
             range_list = date_range(start_date, end_date)
