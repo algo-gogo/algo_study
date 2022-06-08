@@ -27,6 +27,9 @@ def solution(masks, dates):
     date_list = list(set(date_list))
     date_list.sort()
     print(date_list)
+
+
+
     return answer
 
 
