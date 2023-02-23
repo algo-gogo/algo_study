@@ -1,7 +1,9 @@
 def solution(board):
     answer = 0
 
-
+    print(board)
+    for i in range(len(board)):
+        print(board[i])
 
     return answer
 
