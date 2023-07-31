@@ -11,6 +11,8 @@ def solution(relationships, target, limit):
     # 원래 알던 친구
     friends = []
 
+
     return answer
 
 print(solution([[1,2],[2,3],[2,6],[3,4],[4,5]], 2, 3)) # 37
+# 5, 5, 5, 10, 10 => 35
