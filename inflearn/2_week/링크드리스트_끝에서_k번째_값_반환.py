@@ -14,9 +14,32 @@ class LinkedList:
             cur = cur.next
         cur.next = Node(value)
 
-    def get_kth_node_from_last(self, k):
+    # 끝에서 k번째 값을 구하기
+    # def get_kth_node_from_last(self, k):
+    #     cur_index = 0
+    #     cur = self.head
+    #     node_list = []
+    #     while cur is not None:
+    #         node_list.append(cur.data)
+    #         cur = cur.next
+    #         cur_index += 1
+    #
+    #     print(node_list)
+    #     print(k)
+    #     return node_list[-k]
 
-        return self.head
+    def get_kth_node_from_last(self, k):
+        cur_index = 0
+        cur = self.head
+        node_list = []
+        while cur is not None:
+            node_list.append(cur)
+            cur = cur.next
+            cur_index += 1
+
+        print(node_list)
+        print(k)
+        return node_list[-k]
 
 
 linked_list = LinkedList(6)
