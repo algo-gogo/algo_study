@@ -1,10 +1,39 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/42584
 
+from collections import deque
+
 prices = [1, 2, 3, 2, 3]
 
 def get_price_not_fall_periods(prices):
+    answer = []
+    prices = deque(prices)
+    print(prices)
+    while prices:
+        pop_queue = prices.popleft()
+        period = 0
+        for next_price in prices:
+            if pop_queue > next_price:
+                period += 1
+                break
+            period += 1
+        answer.append(period)
 
-    return
+    return answer
+
+# def get_price_not_fall_periods(prices):
+#     answer = []
+#     for i in range(len(prices)):
+#         period = 0
+#         for j in range(i + 1, len(prices)):
+#             if prices[i] <= prices[j]:
+#                 period += 1
+#             else:
+#                 period += 1
+#                 break
+#
+#         answer.append(period)
+#
+#     return answer
 
 
 print(get_price_not_fall_periods(prices))
