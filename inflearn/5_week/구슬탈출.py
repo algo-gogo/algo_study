@@ -35,39 +35,51 @@ def is_available_to_take_out_only_red_marble(game_map):
     while queue:
         rx, ry, bx, by, count = queue.popleft()
         for i in range(4):
-            rnx = rx + dx[i]
-            rny = ry + dy[i]
-            bnx = bx + dx[i]
-            bny = by + dy[i]
-            # 빨, 파 둘다 이동 가능
-            if (0 <= rnx < len(game_map) and 0 <= rny < len(game_map[0]) and game_map[rnx][rny] != '#'
-                    and 0 <= bnx < len(game_map) and 0 <= bny < len(game_map[0]) and game_map[bnx][bny] != '#'):
-                if game_map[rnx][rny] == 'O':
-                    return False
-                queue.append((rnx, rny, bnx, bny, count + 1))
-            # 빨은 이동 불가능, 파는 이동 가능
-            elif (0 > rnx or rny >= len(game_map) or game_map[rnx][rny] == '#' or 0 > rny or rny >= len(game_map[0])) and 0 <= bnx < len(game_map) and 0 <= bny < len(game_map[0]) and game_map[bnx][bny] != '#':
-                if game_map[bnx][bny] == 'O':
+            while True:
+                rnx = rx + dx[i]
+                rny = ry + dy[i]
+                bnx = bx + dx[i]
+                bny = by + dy[i]
+                # 모두 이동이 불가능할때까지 while
+                # 빨이 이동 불가능
+                if 0 <= rnx < len(game_map) and 0 <= rny < len(game_map[0]) and game_map[rnx][rny] == '#' or 0 > rnx or rny >= len(game_map) or 0 > rny or rny >= len(game_map[0]):
+                    rx = rnx
+                    ry = rny
                     continue
-                # 파가 이동 가능하지만 거기에 빨이 있을 경우
-                if rx == bnx and ry == bny:
-                    queue.append((rx, ry, bx, by, count + 1))
-                else:
-                    queue.append((rx, ry, bnx, bny, count + 1))
-            # 빨은 이동 가능, 파는 이동 불가능
-            elif (0 > bnx or bny >= len(game_map) or game_map[bnx][bny] == '#' or 0 > bny or bny >= len(
-                game_map[0])) and 0 <= rnx < len(game_map) and 0 <= rny < len(game_map[0]) and game_map[rnx][
-                rny] != '#':
-                if game_map[rnx][rny] == 'O':
-                    return count_check(count)
-                if bx == rnx and by == rny:
-                    queue.append((rx, ry, bx, by, count + 1))
-                else:
-                    queue.append((rx, ry, rnx, rny, count + 1))
-            # 모두 못움직일 경우
-            elif (0 > bnx or bny >= len(game_map) or game_map[bnx][bny] == '#' or 0 > bny or bny >= len(game_map[0])
-                or 0 > rnx or rny >= len(game_map) or game_map[rnx][rny] == '#' or 0 > rny or rny >= len(game_map[0])):
-                return False
+                # 파가 이동 불가능
+                if 0 <= bnx < len(game_map) and 0 <= bny < len(game_map[0]) and game_map[bnx][bny] == '#' or 0 > bnx or bny >= len(game_map) or 0 > bny or bny >= len(game_map[0]):
+                    bx = bnx
+                    by = bny
+                    continue
+                # 빨, 파 둘다 이동 가능
+                if (0 <= rnx < len(game_map) and 0 <= rny < len(game_map[0]) and game_map[rnx][rny] != '#'
+                        and 0 <= bnx < len(game_map) and 0 <= bny < len(game_map[0]) and game_map[bnx][bny] != '#'):
+                    if game_map[rnx][rny] == 'O':
+                        return False
+                    queue.append((rnx, rny, bnx, bny, count + 1))
+                # 빨은 이동 불가능, 파는 이동 가능
+                elif (0 > rnx or rny >= len(game_map) or game_map[rnx][rny] == '#' or 0 > rny or rny >= len(game_map[0])) and 0 <= bnx < len(game_map) and 0 <= bny < len(game_map[0]) and game_map[bnx][bny] != '#':
+                    if game_map[bnx][bny] == 'O':
+                        continue
+                    # 파가 이동 가능하지만 거기에 빨이 있을 경우
+                    if rx == bnx and ry == bny:
+                        queue.append((rx, ry, bx, by, count + 1))
+                    else:
+                        queue.append((rx, ry, bnx, bny, count + 1))
+                # 빨은 이동 가능, 파는 이동 불가능
+                elif (0 > bnx or bny >= len(game_map) or game_map[bnx][bny] == '#' or 0 > bny or bny >= len(
+                    game_map[0])) and 0 <= rnx < len(game_map) and 0 <= rny < len(game_map[0]) and game_map[rnx][
+                    rny] != '#':
+                    if game_map[rnx][rny] == 'O':
+                        return count_check(count)
+                    if bx == rnx and by == rny:
+                        queue.append((rx, ry, bx, by, count + 1))
+                    else:
+                        queue.append((rx, ry, rnx, rny, count + 1))
+                # 모두 못움직일 경우
+                elif (0 > bnx or bny >= len(game_map) or game_map[bnx][bny] == '#' or 0 > bny or bny >= len(game_map[0])
+                    or 0 > rnx or rny >= len(game_map) or game_map[rnx][rny] == '#' or 0 > rny or rny >= len(game_map[0])):
+                    return False
 
     return count_check(count)
 
