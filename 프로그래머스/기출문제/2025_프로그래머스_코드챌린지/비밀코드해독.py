@@ -1,29 +1,29 @@
 from itertools import combinations
 
 def solution(n, q, ans):
-    global com_list
-    answer = 0
+    global flag
+    all_codes = list(combinations(range(1, n + 1), 5))
+    print(all_codes)
 
-    result_com_list = list(combinations([i for i in range(1, n + 1)], 5))
-    print('result_com_list', result_com_list)
+    result = 0
+    for code in all_codes:
+        flag = False
+        for index, q_list in enumerate(q):
+            target_count = 0
+            for q_index in q_list:
+                if q_index in code:
+                    target_count += 1
+            if target_count == ans[index]:
+                flag = True
+            else:
+                flag = False
+                break
+        if flag:
+            print(code)
+            result += 1
 
-    com_list = []
-    for i in range(len(q)):
-        combination = combinations(q[i], ans[i])
-        com_list.append(list(combination))
+    return result
 
-    print('com_list', com_list)
-    # for result_com in result_com_list:
-    #     flag = True
-    #     print(result_com)
-    #     for com in com_list:
-    #         if com in result_com:
-    #             pass
-
-
-
-
-    return answer
 
 print(solution(10,
                [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [3, 7, 8, 9, 10], [2, 5, 7, 9, 10], [3, 4, 5, 6, 7]],

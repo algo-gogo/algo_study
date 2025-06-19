@@ -27,3 +27,19 @@ t_d = [list(map(int, input().split())) for _ in range(n)]#예시는 4줄. 4.-와
 string_list = [input().strip() for _ in range(n)]
 
 ```
+```python
+# 중복 불포함
+from itertools import combinations
+selectXList = list(combinations([1, 2, 3, 4, 5], 3))
+
+# 중복 포함
+from itertools import permutations
+selectXList = list(permutations([1, 2, 3, 4, 5], 3))
+
+# queue
+from collections import deque
+
+# sort
+sorted({1: 1, 2: 2}, key=lambda x: x[1], reverse=True)
+[1, 2, 3, 4].sort(key=lambda x: (x[0], x[1][0]))
+```
